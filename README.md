@@ -3,8 +3,8 @@
 ## TA Materials
 PDDS TA Course Materials: https://hackmd.io/@PoYa-Sharon-Lin/ryJmKZOBxe 
 
-## Repo Description 
-This repo supports the TA Course Materials above with data and code. 
-- **data-visualization branch:** include the data and powerBI template in Dash Board Design Concept(https://hackmd.io/@PoYa-Sharon-Lin/B1eMjxzIxl)
-- **static-db branch:** include the unnormalized xlsx, normalized tables in csv, SQL query examples in Database Demo (https://hackmd.io/@PoYa-Sharon-Lin/Hy4d0VwLll)
-- **dynamic-db branch:** 
+## Branch Description
+This branch stores the data and Power BI template for both operational dashboard and tactical dashboard. 
+
+The data model of tactical dashboard is as below 
+![Data Model](data_model.png)
