@@ -1,0 +1,16 @@
+ExamID,PatientIDs,ResultStatus
+E001,P001,Normal
+E001,P002,Normal
+E002,P003,Abnormal
+E003,P004,Normal
+E003,P001,Normal
+E004,P002,Abnormal
+E004,P002,Pending
+E004,P005,Abnormal
+E004,P005,Pending
+E005,P005,Pending
+E005,P003,Pending
+E006,P001,Normal
+E007,P003,Normal
+E007,P004,Normal
+E007,P005,Normal
