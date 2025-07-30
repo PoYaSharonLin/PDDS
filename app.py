@@ -7,6 +7,107 @@ app = Dash(__name__)
 # Base URL for the API
 BASE_URL = "http://localhost:8000"
 
+class KPI:
+    '''Fetch functions'''
+    @staticmethod
+    def fetch_revenue_data():
+        '''Fetch HospitalStayDays * $1200 grouped by Month'''
+        try:
+            response = requests.get(f"{BASE_URL}/api/kpi/revenue")
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            print(f"Error fetching Hospital Stay Days: {e}")
+            return []
+
+    @staticmethod
+    def fetch_cost_data():
+        '''Fetch SUM(Examination Cost) / COUNT(Examination ID)'''
+        try:
+            response = requests.get(f"{BASE_URL}/api/kpi/cost")
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            print(f"Error fetching Examination cost or examination ID: {e}")
+            return []
+
+    @staticmethod
+    def fetch_cost_per_minute_data():
+        '''Fetch Examination Cost / Duration Minutes'''
+        try:
+            response = requests.get(f"{BASE_URL}/api/kpi/cost_per_minute")
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            print(f"Error fetching cost per minute: {e}")
+            return []
+
+    @staticmethod
+    def fetch_examination_data():
+        '''Fetch COUNTIF(ExamID, DateRange, "in this month")'''
+        try:
+            response = requests.get(f"{BASE_URL}/api/kpi/examinations")
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            print(f"Error fetching examination count: {e}")
+            return []
+            
+    '''Create functions'''
+    @staticmethod
+    def create_revenue(revenue_data):
+        '''Create an indicator for revenue data'''
+        fig = go.Figure(data=[
+            go.Indicator(
+                mode="number+delta",
+                value=revenue_data['current'],
+                delta={'reference': revenue_data['previous'], 'relative': True},
+                title={'text': "Revenue"},
+                number={'prefix': "$"}
+            )
+        ])
+        return fig
+
+    @staticmethod
+    def create_cost(cost_data):
+        '''Create an indicator for cost data'''
+        fig = go.Figure(data=[
+            go.Indicator(
+                mode="number+delta",
+                value=cost_data['current'],
+                delta={'reference': cost_data['previous'], 'relative': True},
+                title={'text': "Cost"},
+                number={'prefix': "$"}
+            )
+        ])
+        return fig
+
+    @staticmethod
+    def create_cost_per_minute(cost_per_minute_data):
+        '''Create an indicator for cost per minute data'''
+        fig = go.Figure(data=[
+            go.Indicator(
+                mode="number+delta",
+                value=cost_per_minute_data['current'],
+                delta={'reference': cost_per_minute_data['previous'], 'relative': True},
+                title={'text': "Cost per Minute"},
+                number={'prefix': "$"}
+            )
+        ])
+        return fig
+
+    @staticmethod
+    def create_examination_count(examination_data):
+        '''Create an indicator for examination data'''
+        fig = go.Figure(data=[
+            go.Indicator(
+                mode="number+delta",
+                value=examination_data['current'],
+                delta={'reference': examination_data['previous'], 'relative': True},
+                title={'text': "Examination Count"}
+            )
+        ])
+        return fig
 
 def fetch_exam_counts():
     """Fetch patient examination counts from the API"""
@@ -82,6 +183,10 @@ def create_blood_test_doctor_pie_chart(doctor_data):
 # Fetch data
 exam_data = fetch_exam_counts()
 doctor_data = fetch_blood_test_doctors()
+revenue_data = fetch_revenue_data()
+cost_data = fetch_cost_data()
+cost_per_minute_data = fetch_cost_per_minute_data()
+examination_data = fetch_examination_data()
 
 # Create figures
 bar_fig = create_exam_count_bar_chart(exam_data) if exam_data else go.Figure()
@@ -89,6 +194,11 @@ pie_fig = (
     create_blood_test_doctor_pie_chart(doctor_data)
     if doctor_data else go.Figure()
 )
+revenue_fig = KPI.create_revenue(revenue_data)
+average_cost_fig = KPI.create_cost(cost_data)
+cost_per_minutes_fig = KPI.create_cost_per_minute(cost_per_minute_data)
+examination_count_fig = KPI.create_examination_count(examination_data)
+
 
 # Define layout
 app.layout = html.Div([
@@ -107,6 +217,43 @@ app.layout = html.Div([
             figure=pie_fig,
             style={
                 'width': '50%',
+                'display': 'inline-block'
+            }
+        )
+    ]),
+    html.H2("KPIs Overview", style={'textAlign':'center'}),
+    html.Div([
+        dcc.Graph(
+            id='hospital-revenue-indicator',
+            figure=revenue_fig, 
+            style={
+                'width': '30%',
+                'display': 'inline-block'
+            }
+        ), 
+        dcc.Graph(
+            id='average-cost-indicator', 
+            figure=average_cost_fig, 
+            style={
+                'width': '15%', 
+                'display': 'inline-block'
+            }
+        ),
+        
+        dcc.Graph(
+            id='cost-per-minute-indicator',
+            figure=cost_per_minutes_fig,
+            style={
+                'width': '15%'
+                'display': 'inline-block'
+            }
+        ), 
+        
+        dcc.Graph(
+            id='examination-count-indicator',
+            figure=examination_count_fig,
+            style={
+                'width': '10%', 
                 'display': 'inline-block'
             }
         )
