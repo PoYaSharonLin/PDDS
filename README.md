@@ -5,7 +5,33 @@ PDDS TA Course Materials: https://hackmd.io/@PoYa-Sharon-Lin/ryJmKZOBxe
 
 ## Branch Description 
 This branch contains the backend, frontend, and the database for the PDDS course project.
+Most of the contents is the same as Database-Demo. 
+However, here we organize the files into corresponding folders. 
 
+---
+
+## File Structure 
+```bash
+Dash-Demo-Dev/
+├── preprocessing/              # Process of normalizing the tables 
+│   └── normalization.py
+├── src/                        # Raw data in xlsx format & normalized tables 
+│   ├── doctor.csv
+│   ├── doctor_examination.csv
+│   ├── examination.csv
+│   ├── patient.csv
+│   ├── patient_doctor.csv
+│   ├── patient_examination.csv
+│   └── system_data.xlsx
+├── test/                      # test folder for testing files  
+│   └── test_api.py
+├── .gitignore
+├── README.md
+├── api.py                     # api file for defining what to return to what endpoint (URL) of  the webpage
+├── app.py                     # app file for presenting the view of the webpage 
+└── requirements.txt           # for packages needed to run this application 
+```
+---
 
 ## Instructions 
 
