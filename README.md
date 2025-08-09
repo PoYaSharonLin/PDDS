@@ -73,7 +73,7 @@ python3 preprocessing/normalization.py
 
 ### 5. Run Dash (frontend)
 ```bash
-python app.py
+python3 app.py
 ```
 
 ## Additional Installation 
