@@ -60,7 +60,8 @@ class KPI:
             go.Indicator(
                 mode="number+delta",
                 value=revenue_data['current'],
-                delta={'reference': revenue_data['previous'], 'relative': True},
+                delta={'reference': revenue_data['previous'],
+                       'relative': True},
                 title={'text': "Revenue"},
                 number={'prefix': "$"}
             )
@@ -88,7 +89,8 @@ class KPI:
             go.Indicator(
                 mode="number+delta",
                 value=cost_per_minute_data['current'],
-                delta={'reference': cost_per_minute_data['previous'], 'relative': True},
+                delta={'reference': cost_per_minute_data['previous'],
+                       'relative': True},
                 title={'text': "Cost per Minute"},
                 number={'prefix': "$"}
             )
@@ -102,7 +104,8 @@ class KPI:
             go.Indicator(
                 mode="number+delta",
                 value=examination_data['current'],
-                delta={'reference': examination_data['previous'], 'relative': True},
+                delta={'reference': examination_data['previous'],
+                       'relative': True},
                 title={'text': "Examination Count"}
             )
         ])

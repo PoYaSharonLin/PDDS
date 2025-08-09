@@ -71,6 +71,11 @@ Run the command below to export the normalized tables to csv files and connect t
 python3 preprocessing/normalization.py
 ```
 
+Run the command below to add tables to SQLite database.
+```bash
+python3 preprocessing/DBconnection.py
+```
+
 ### 5. Run Dash (frontend)
 ```bash
 python3 app.py
