@@ -1,5 +1,0 @@
-DoctorID,Specialty,YearsExperience,ExaminationsOrdered,AvgPatientAge,Department,ContactEmail,Title,FirstName,LastName
-D001,Cardiology,12,10,52.5,Heart,alice.lee@hospital.com,Dr.,Alice,Lee
-D002,Endocrynology,8,6,41.0,General,bob.carter@hospital.com,Dr.,Bob,Carter
-D003,Pulmonology,15,4,36.5,Lung,clara.wong@hospital.com,Dr.,Clara,Wong
-D004,Orthopedics,10,5,55.0,Bones,david.kim@hospital.com,Dr.,David,Kim
