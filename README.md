@@ -15,13 +15,8 @@ However, here we organize the files into corresponding folders.
 Dash-Demo-Dev/
 ├── preprocessing/              # Process of normalizing the tables 
 │   └── normalization.py
+│   └── DBConnection.py
 ├── src/                        # Raw data in xlsx format & normalized tables 
-│   ├── doctor.csv
-│   ├── doctor_examination.csv
-│   ├── examination.csv
-│   ├── patient.csv
-│   ├── patient_doctor.csv
-│   ├── patient_examination.csv
 │   └── system_data.xlsx
 ├── test/                      # test folder for testing files  
 │   └── test_api.py
