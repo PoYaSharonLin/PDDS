@@ -76,6 +76,24 @@ Run the command below to add tables to SQLite database.
 python3 preprocessing/DBconnection.py
 ```
 
+Test SQLite connection
+```bash
+# cd src
+sqlite3 hospital_database.db
+```
+
+```sql
+# .tables
+# SELECT * FROM patient LIMIT 5;
+```
+```sql
+#  BEGIN;
+#  INSERT INTO patient (FirstName, LastName, Year, Month, Day)
+#  VALUES ('John', 'Doe', 1985, 6, 15);
+#  COMMIT;
+#  SELECT * FROM patient;
+```
+
 ### 5. Run Dash (frontend)
 ```bash
 python3 app.py
