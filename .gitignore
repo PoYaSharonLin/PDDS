@@ -18,7 +18,6 @@ build/
 *.whl
 
 # SQLite database files
-*.db
 *.sqlite
 *.sqlite3
 hospital_database.db
