@@ -13,18 +13,20 @@ However, here we organize the files into corresponding folders.
 ## File Structure 
 ```bash
 Dash-Demo-Dev/
-├── preprocessing/              # Process of normalizing the tables 
+├── preprocessing               # Process of normalizing the tables 
+│   ├── DBconnection.py
 │   └── normalization.py
-│   └── DBConnection.py
-├── src/                        # Raw data in xlsx format & normalized tables 
+├── query.sql
+├── requirements.txt            # for packages needed to run this application 
+├── src                         # Raw data in xlsx format & normalized tables 
+│   ├── doctor.csv
+│   ├── doctor_examination.csv
+│   ├── examination.csv
+│   ├── hospital_database.db    # database for testing connection 
+│   ├── patient.csv
+│   ├── patient_doctor.csv
+│   ├── patient_examination.csv
 │   └── system_data.xlsx
-├── test/                      # test folder for testing files  
-│   └── test_api.py
-├── .gitignore
-├── README.md
-├── api.py                     # api file for defining what to return to what endpoint (URL) of  the webpage
-├── app.py                     # app file for presenting the view of the webpage 
-└── requirements.txt           # for packages needed to run this application 
 ```
 ---
 
