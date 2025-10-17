@@ -20,7 +20,6 @@ build/
 # SQLite database files
 *.sqlite
 *.sqlite3
-hospital_database.db
 
 # IDE and editor files
 .idea/
