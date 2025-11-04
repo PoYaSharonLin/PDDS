@@ -1,0 +1,8 @@
+ExamID,ExamType,ExamCost,DurationMinutes,Year,Month,Day
+E001,Blood Test,100,30,2025,6,10
+E002,ECG,150,45,2025,7,5
+E003,X-Ray,200,20,2025,5,18
+E004,Blood Test,100,30,2025,6,28
+E005,MRI,600,60,2025,6,29
+E006,Ultrasound,120,40,2025,6,12
+E007,Blood Test,150,30,2025,7,7

@@ -1,0 +1,6 @@
+PatientID,Age,Gender,BloodType,PrimaryDiagnosis,TotalExaminations,HospitalStayDays,ContactNumber,FirstName,LastName,Year,Month,Day
+P001,45,Male,O+,Hypertension,5,3,555-123-4567,John,Smith,2025,6,15
+P002,32,Female,A-,Diabetes,3,1,555-987-6543,Mary,Johnson,2025,7,1
+P003,60,Male,B+,Heart Disease,8,5,555-456-7890,Alex,Brown,2025,7,8
+P004,28,Female,AB+,Asthma,2,0,555-321-0987,Sarah,Davis,2025,5,20
+P005,50,Female,O-,Arthritis,4,2,555-654-3210,Emma,Wilson,2025,6,30

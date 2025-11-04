@@ -1,0 +1,15 @@
+# preprocessing 
+openpyxl
+
+# test
+pytest
+requests
+
+# api 
+flask
+
+# app
+dash
+numpy
+pandas
+plotly[express]
