@@ -78,6 +78,7 @@ pie_fig = create_blood_test_doctor_pie_chart(doctor_data) if doctor_data else go
 # --- Define Layout (KPI Section is now gone) ---
 app.layout = html.Div([
     html.H1("Hospital Data Dashboard", style={'textAlign': 'center'}),
+    html.H1("deployed to heroku", style={'textAlign': 'center'}),
     html.Div([
         dcc.Graph(id='exam-bar-chart', figure=bar_fig, style={'width': '50%', 'display': 'inline-block'}),
         dcc.Graph(id='doctor-pie-chart', figure=pie_fig, style={'width': '50%', 'display': 'inline-block'})
