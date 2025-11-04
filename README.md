@@ -47,14 +47,10 @@ source venv/bin/activate
 
 ### 2. Install Dependencies
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3. Run tests 
-activate api
-```bash
-python api.py
-```
 
 run tests 
 ```bash

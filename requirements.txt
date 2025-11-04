@@ -13,3 +13,5 @@ dash
 numpy
 pandas
 plotly[express]
+plotly
+gunicorn
