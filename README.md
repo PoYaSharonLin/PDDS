@@ -39,6 +39,8 @@ git clone <repository-url>
 ```
 
 open up a virtual environment
+下次 python 上課記得說
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -101,3 +103,13 @@ python3 app.py
 - SQLite Browser: for viewing the SQLite database
 - Postman: for debugging the API endpoint
 
+## Deploy to Heroku 
+```bash
+heroku login
+```
+```bash
+git add .
+git commit -m "Heroku commit"
+git push # push to github repo
+git push heroku main # push to heroku 
+```
