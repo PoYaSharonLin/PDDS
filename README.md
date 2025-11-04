@@ -39,7 +39,6 @@ git clone <repository-url>
 ```
 
 open up a virtual environment
-下次 python 上課記得說
 
 ```bash
 python3 -m venv venv
@@ -110,6 +109,6 @@ heroku login
 ```bash
 git add .
 git commit -m "Heroku commit"
-git push # push to github repo
-git push heroku main # push to heroku 
+git push 
+git push heroku main 
 ```
